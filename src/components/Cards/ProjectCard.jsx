@@ -120,6 +120,7 @@ const Avatar = styled.img`
 `;
 
 export default function ProjectCard(project, setOpenModal) {
+    
   return (
     <Card onClick={() => setOpenModal({ state: true, project: project })}>
       <Image src={project.project.image} />
@@ -134,7 +135,6 @@ export default function ProjectCard(project, setOpenModal) {
         <Description>{project.project.description}</Description>
       </Details>
       <Members>
-          {console.log(project)}
         {project.project.member?.map((member) => (
           <Avatar key={member.name} src={member.img} />
         ))}
