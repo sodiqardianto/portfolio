@@ -9,7 +9,7 @@ background-color: ${({ theme }) => theme.card_light};
 display: flex;
 justify-content: center;
 position: relative;
-padding: 8-px 3-px;
+padding: 80px 30px;
 @media screen and (max-width: 960px) {
   padding: 66px 16px;
 }
