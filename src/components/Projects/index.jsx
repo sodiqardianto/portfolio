@@ -110,7 +110,8 @@ const CardContainer = styled.div`
   // }
 `;
 
-export default function Projects(openModal, setOpenModal ) {
+// eslint-disable-next-line react/prop-types
+export default function Projects({ openModal, setOpenModal }) {
   const [toggle, setToggle] = useState("all");
   return (
     <Container id="projects">

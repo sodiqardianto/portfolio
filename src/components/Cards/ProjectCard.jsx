@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -119,23 +120,26 @@ const Avatar = styled.img`
   border: 3px solid ${({ theme }) => theme.card};
 `;
 
-export default function ProjectCard(project, setOpenModal) {
-    
+export default function ProjectCard({ project, setOpenModal }) {
   return (
-    <Card onClick={() => setOpenModal({ state: true, project: project })}>
-      <Image src={project.project.image} />
+    <Card
+      onClick={() => {
+        setOpenModal({ state: true, project: project });
+      }}
+    >
+      <Image src={project.image} />
       <Tags>
-        {project.project.tags?.map((tag, index) => (
+        {project.tags?.map((tag, index) => (
           <Tag key={index}>{tag}</Tag>
         ))}
       </Tags>
       <Details>
-        <Title>{project.project.title}</Title>
-        <Date>{project.project.date}</Date>
-        <Description>{project.project.description}</Description>
+        <Title>{project.title}</Title>
+        <Date>{project.date}</Date>
+        <Description>{project.description}</Description>
       </Details>
       <Members>
-        {project.project.member?.map((member) => (
+        {project.member?.map((member) => (
           <Avatar key={member.name} src={member.img} />
         ))}
       </Members>

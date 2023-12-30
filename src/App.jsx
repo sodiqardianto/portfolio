@@ -1,6 +1,6 @@
 import "./App.css";
 import styled, { ThemeProvider } from "styled-components";
-import { darkTheme, lightTheme  } from "./utils/Themes";
+import { darkTheme, lightTheme } from "./utils/Themes";
 import Navbar from "./components/Navbar";
 import Hero from "./components/HeroSection";
 import Skills from "./components/Skills";
@@ -17,8 +17,7 @@ const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
   width: 100%;
   overflow-x: hidden;
-`
-
+`;
 
 const Wrapper = styled.div`
   background: linear-gradient(
@@ -37,9 +36,8 @@ const Wrapper = styled.div`
 
 function App() {
   // eslint-disable-next-line no-unused-vars
-  const [darkMode, setDarkMode] = useState(true)
-  const [openModal, setOpenModal] = useState({ state: false, project: null })
-  console.log(openModal);
+  const [darkMode, setDarkMode] = useState(true);
+  const [openModal, setOpenModal] = useState({ state: false, project: null });
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Router>
@@ -51,15 +49,15 @@ function App() {
             <Experience />
             <Education />
           </Wrapper>
-          <Projects />
+          <Projects openModal={openModal} setOpenModal={setOpenModal} />
           <Wrapper>
             <Education />
             <About />
           </Wrapper>
           <Footer />
-          {openModal.state &&
+          {openModal.state && (
             <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />
-          }
+          )}
         </Body>
       </Router>
     </ThemeProvider>
