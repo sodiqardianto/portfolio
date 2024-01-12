@@ -57,40 +57,40 @@ const Desc = styled.div`
   }
 `;
 
-const ToggleButtonGroup = styled.div`
-  display: flex;
-  border: 1.5px solid ${({ theme }) => theme.primary};
-  color: ${({ theme }) => theme.primary};
-  font-size: 16px;
-  border-radius: 12px;
-  font-weight: 500;
-  margin: 22px 0px;
-  @media (max-width: 768px) {
-    font-size: 12px;
-  }
-`;
+// const ToggleButtonGroup = styled.div`
+//   display: flex;
+//   border: 1.5px solid ${({ theme }) => theme.primary};
+//   color: ${({ theme }) => theme.primary};
+//   font-size: 16px;
+//   border-radius: 12px;
+//   font-weight: 500;
+//   margin: 22px 0px;
+//   @media (max-width: 768px) {
+//     font-size: 12px;
+//   }
+// `;
 
-const ToggleButton = styled.div`
-  padding: 8px 18px;
-  border-radius: 6px;
-  cursor: pointer;
-  ${({ active, theme }) =>
-    active &&
-    `
-    background: ${theme.primary + 20};
-    `}
-  &:hover {
-    background: ${({ theme }) => theme.primary + 8};
-  }
-  @media (max-width: 768px) {
-    padding: 6px 8px;
-    border-radius: 4px;
-  }
-`;
-const Divider = styled.div`
-  width: 1.5px;
-  background: ${({ theme }) => theme.primary};
-`;
+// const ToggleButton = styled.div`
+//   padding: 8px 18px;
+//   border-radius: 6px;
+//   cursor: pointer;
+//   ${({ active, theme }) =>
+//     active &&
+//     `
+//     background: ${theme.primary + 20};
+//     `}
+//   &:hover {
+//     background: ${({ theme }) => theme.primary + 8};
+//   }
+//   @media (max-width: 768px) {
+//     padding: 6px 8px;
+//     border-radius: 4px;
+//   }
+// `;
+// const Divider = styled.div`
+//   width: 1.5px;
+//   background: ${({ theme }) => theme.primary};
+// `;
 
 const CardContainer = styled.div`
   display: flex;
@@ -112,6 +112,7 @@ const CardContainer = styled.div`
 
 // eslint-disable-next-line react/prop-types
 export default function Projects({ openModal, setOpenModal }) {
+  // eslint-disable-next-line no-unused-vars
   const [toggle, setToggle] = useState("all");
   return (
     <Container id="projects">
@@ -121,7 +122,7 @@ export default function Projects({ openModal, setOpenModal }) {
           I have worked on a wide range of projects. From web apps to android
           apps. Here are some of my projects.
         </Desc>
-        <ToggleButtonGroup>
+        {/* <ToggleButtonGroup>
           {toggle === "all" ? (
             <ToggleButton active value="all" onClick={() => setToggle("all")}>
               All
@@ -179,7 +180,7 @@ export default function Projects({ openModal, setOpenModal }) {
               MACHINE LEARNING
             </ToggleButton>
           )}
-        </ToggleButtonGroup>
+        </ToggleButtonGroup> */}
         <CardContainer>
           {toggle === "all" &&
             projects.map((project) => (
@@ -190,7 +191,7 @@ export default function Projects({ openModal, setOpenModal }) {
                 setOpenModal={setOpenModal}
               />
             ))}
-          {projects
+          {/* {projects
             .filter((item) => item.category == toggle)
             .map((project) => (
               <ProjectCard
@@ -199,7 +200,7 @@ export default function Projects({ openModal, setOpenModal }) {
                 openModal={openModal}
                 setOpenModal={setOpenModal}
               />
-            ))}
+            ))} */}
         </CardContainer>
       </Wrapper>
     </Container>
